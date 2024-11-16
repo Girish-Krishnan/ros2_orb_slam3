@@ -1,4 +1,11 @@
-# ROS2 ORB SLAM3 V1.0 package
+# Modified ROS2 ORB SLAM3 V1.0 package
+
+Girish Krishnan | [LinkedIn](https://www.linkedin.com/in/girk) | [GitHub](https://www.github.com/Girish-Krishnan)
+---
+
+This is a fork of the original ROS2 ORB SLAM3 V1.0 package by Azmyin Md. Kamal. The original package can be found [here](https://github.com/Mechazo11/ros2_orb_slam3/tree/main). When briefly working with the Inverse Reinforcement Learning (IRL) Manipulation team at the [Existential Robotics Laboratory](https://existentialrobotics.org/), I was tasked with getting ORB SLAM3 to work with an Intel RealSense camera connected to a Linux machine running ROS2. Although there are several ROS1 wrappers that nicely interface ORB SLAM with Intel RealSense cameras, I could not find an easy-to-use ROS2 wrapper that did the same. This fork is an attempt to modify the original ROS2 ORB SLAM3 V1.0 package to work with Intel RealSense cameras. In addition, I also modified the package so that the ORB SLAM3 node outputs the pose of the camera relative to its starting pose. This could then be easily integrated with packages like Octomap to create a 3D map of the environment in real-time.
+
+# Documentation for Original ROS2 ORB SLAM3 V1.0 package
 
 A ROS2 package for ORB SLAM3 V1.0. Focus is on native integration with ROS2 ecosystem. My goal is to provide a "bare-bones" starting point for developers in using ORB SLAM3 framework in their ROS 2 projects. Hence, this package will not use more advanced features of ROS 2 such as rviz, tf and launch files. This project structure is heavily influenced by the excellent ROS1 port of ORB SLAM3 by [thien94](https://github.com/thien94/orb_slam3_ros/tree/master). 
 

@@ -150,8 +150,8 @@ void MonocularMode::Img_callback(const sensor_msgs::msg::Image& msg)
 void MonocularMode::initializeVSLAM(const std::string& configString)
 {
     // Define the path to the ORB-SLAM3 vocabulary and settings file
-    std::string vocFilePath = "/home/erl-xarm6/nikola_moveit_ws/Nikola_ERL_Robot_Manipulation_Moveit/src/ros2_orb_slam3/orb_slam3/Vocabulary/ORBvoc.txt.bin"; // Replace with your actual path
-    std::string settingsFilePath = "/home/erl-xarm6/nikola_moveit_ws/Nikola_ERL_Robot_Manipulation_Moveit/src/ros2_orb_slam3/orb_slam3/config/Monocular/" + configString + ".yaml"; // Replace with your actual path
+    std::string vocFilePath = "/ROS2_ORB_SLAM_ENV/src/ros2_orb_slam3/orb_slam3/Vocabulary/ORBvoc.txt.bin";
+    std::string settingsFilePath = "/ROS2_ORB_SLAM_ENV/src/ros2_orb_slam3/orb_slam3/config/Monocular/" + configString + ".yaml"; // Replace with your actual path
 
     // Check if files exist
     if (!std::ifstream(vocFilePath).good())
@@ -173,11 +173,11 @@ void MonocularMode::initializeVSLAM(const std::string& configString)
 }
 
 // Main function
-int main(int argc, char** argv)
-{
-    rclcpp::init(argc, argv);
-    auto node = std::make_shared<MonocularMode>(); // Should now link correctly
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-    return 0;
-}
+// int main(int argc, char** argv)
+// {
+//     rclcpp::init(argc, argv);
+//     auto node = std::make_shared<MonocularMode>(); // Should now link correctly
+//     rclcpp::spin(node);
+//     rclcpp::shutdown();
+//     return 0;
+// }

@@ -1,16 +1,3 @@
-/*
-
-A bare-bones example node demonstrating the use of the Monocular mode in ORB-SLAM3
-
-Author: Azmyin Md. Kamal
-Date: 01/01/24
-
-REQUIREMENTS
-* Make sure to set path to your workspace in common.hpp file
-
-*/
-
-// Includes
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 #include "std_msgs/msg/float64.hpp"

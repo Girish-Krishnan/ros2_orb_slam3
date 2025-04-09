@@ -128,7 +128,7 @@ void MonocularMode::Img_callback(const sensor_msgs::msg::Image& msg)
         {
             // Publish the pose
             geometry_msgs::msg::PoseStamped pose_msg;
-            pose_msg.header.stamp = this->now();
+            pose_msg.header.stamp = rclcpp::Time(static_cast<uint64_t>(timeStep * 1e9));
             pose_msg.header.frame_id = "camera_link";
 
             Eigen::Quaternionf q(pose_SE3.unit_quaternion());
@@ -140,6 +140,18 @@ void MonocularMode::Img_callback(const sensor_msgs::msg::Image& msg)
             pose_msg.pose.position.x = pose_SE3.translation().x();
             pose_msg.pose.position.y = pose_SE3.translation().y();
             pose_msg.pose.position.z = pose_SE3.translation().z();
+
+            // Print pose information
+            RCLCPP_INFO(this->get_logger(), "Time: [%f], Pose: [%f, %f, %f], Orientation: [%f, %f, %f, %f]",
+            pose_msg.header.stamp.sec,
+            pose_msg.pose.position.x,
+            pose_msg.pose.position.y,
+            pose_msg.pose.position.z,
+            pose_msg.pose.orientation.x,
+            pose_msg.pose.orientation.y,
+            pose_msg.pose.orientation.z,
+            pose_msg.pose.orientation.w);
+            
 
             pose_publisher_->publish(pose_msg);
         }
